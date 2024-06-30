@@ -1,0 +1,31 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cardArea {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+}
+
+.card {
+    animation: deal 1s ease-in-out forwards;
+    margin: 1rem 0;
+}
+
+@keyframes deal {
+    to {
+        transform: translateY(0) translateX(0);
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 880px) {
+    .cardArea {
+        justify-content: center;
+    }
+}
