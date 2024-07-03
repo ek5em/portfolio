@@ -2,10 +2,13 @@ import { StaticImageData } from "next/image";
 import ReduxTable from "@/assets/jpg/reduxTable.jpg";
 import TopApp from "@/assets/jpg/top-app.jpg";
 import Calculator from "@/assets/jpg/calculator.jpg";
+import Bootstrap from "@/assets/jpg/bootstrap.jpg";
+import LesDvor from "@/assets/jpg/lesdvor.jpg";
+import Payment from "@/assets/jpg/payment.jpg";
 
 export type TProject = {
     title: string;
-    gitHub: string;
+    gitHub?: string;
     demo: string;
     image: StaticImageData;
     aboutKeY: string;
@@ -21,6 +24,22 @@ export const Projects: TProject[] = [
         title: "Top Courses",
         stack: ["Next", "React", "Frame-motion"],
     },
+
+    {
+        aboutKeY: "aboutReduxTable",
+        demo: "https://redux-table-one.vercel.app",
+        gitHub: "https://github.com/ek5em/reduxTable",
+        image: ReduxTable,
+        title: "ReduxTable",
+        stack: ["Redux", "React", "SCSS"],
+    },
+    {
+        aboutKeY: "aboutPayment",
+        demo: "https://bd-payment-app.vercel.app/",
+        image: Payment,
+        title: "PaymentApp",
+        stack: ["Next", "React", "Styled-components"],
+    },
     {
         aboutKeY: "aboutCalculator",
         demo: "https://calculator-two-eta-46.vercel.app",
@@ -30,19 +49,18 @@ export const Projects: TProject[] = [
         stack: ["React", "Canvas", "Math"],
     },
     {
-        aboutKeY: "aboutReduxTable",
-        demo: "https://redux-table-one.vercel.app",
-        gitHub: "https://github.com/ek5em/reduxTable",
-        image: ReduxTable,
-        title: "ReduxTable",
-        stack: ["Redux", "React", "SCSS"],
+        aboutKeY: "aboutLesDvor",
+        demo: "https://lesdvor18.com",
+        image: LesDvor,
+        title: "LesDvor",
+        stack: ["CRM", "Wordpress", "CSS"],
     },
     {
-        aboutKeY: "aboutReduxTable",
-        demo: "https://redux-table-one.vercel.app",
-        gitHub: "https://github.com/ek5em/reduxTable",
-        image: ReduxTable,
-        title: "ReduxTable",
-        stack: ["Redux", "React", "SCSS"],
+        aboutKeY: "aboutBootstrap",
+        demo: "ek5em.github.io/webee/",
+        gitHub: "https://github.com/ek5em/webee/tree/feature",
+        image: Bootstrap,
+        title: "Bootstrap",
+        stack: ["Pure JS", "Bootstrap", "Maps API"],
     },
 ];

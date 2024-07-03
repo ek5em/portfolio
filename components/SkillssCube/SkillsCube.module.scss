@@ -1,3 +1,4 @@
+@import "../../styles/root.scss";
 $cubeSize: 200px;
 
 .wrap {
@@ -54,22 +55,26 @@ $cubeSize: 200px;
         align-items: center;
         font-size: 2rem;
         font-weight: bold;
-        color: #333;
         border: none;
         gap: 0.5rem;
+        background-color: transparent;
 
         &:hover {
             scale: 1.05;
+        }
+
+        p {
+            font-size: 1.5rem;
         }
     }
 }
 
 .side {
+    background-color: rgba($purple, 10%);
     position: absolute;
     width: $cubeSize;
     height: $cubeSize;
-    background: rgba(255, 255, 255, 0);
-    border: 1px solid #ccc;
+    border: 1px solid $silver;
     transition: 0.5s ease-in-out;
 
     &.front {
@@ -97,7 +102,7 @@ $cubeSize: 200px;
     }
 }
 
-@media (max-width: 880px) {
+@media (max-width: $laptop) {
     $cubeSize: 125px;
     .content {
         &.opened {
@@ -128,7 +133,7 @@ $cubeSize: 200px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $phone) {
     $cubeSize: 150px;
     $dy: 16px;
     .content {

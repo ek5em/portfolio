@@ -3,7 +3,7 @@ import { Projects } from "./Projects";
 import Card from "../Card/Card";
 import { useCallback } from "react";
 
-const cardWidth = 400;
+const cardWidth = 432;
 
 export default function CardDealer() {
     const calculateTransform = useCallback((i: number) => {
@@ -20,9 +20,9 @@ export default function CardDealer() {
 
             const x = (centerIndexInRow - currentIndexInRow) * 100;
             const y = (lastRow - 1 - rowIndex) * 100;
-
             return `translateX(${x}%) translateY(${y}%)`;
         }
+        return `translateX(0) translateY(0)`;
     }, []);
 
     return (

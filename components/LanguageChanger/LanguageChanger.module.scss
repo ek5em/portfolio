@@ -1,15 +1,24 @@
+@import "../../styles/root.scss";
+
 .switch {
     button {
         cursor: pointer;
         border: none;
+        color: $silver;
         background: none;
         padding: 0.5rem;
         margin: 0 1.5rem;
         scale: 0.95;
 
+        &:hover {
+            border-bottom: 1px solid $silver;
+        }
+
         &.active {
             scale: 1.05;
             font-weight: bold;
+            border-bottom: 1px solid $white;
+            color: $white;
         }
     }
 }

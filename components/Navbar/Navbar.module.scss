@@ -1,12 +1,15 @@
+@import "../../styles/root.scss";
+
 $cube: 60px;
 
 .navbar {
     display: flex;
     flex-direction: column;
     position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0;
     z-index: 2;
-    height: 100%;
     align-items: center;
     justify-content: center;
 }
@@ -15,7 +18,7 @@ $cube: 60px;
     width: $cube;
     height: $cube;
     margin: 10px;
-    perspective: 1000px;
+    perspective: 6000px;
     cursor: pointer;
     position: relative;
     transform-style: preserve-3d;
@@ -26,7 +29,7 @@ $cube: 60px;
     }
 }
 
-.face {
+.side {
     position: absolute;
     width: $cube;
     height: $cube;
@@ -34,53 +37,58 @@ $cube: 60px;
     align-items: center;
     justify-content: center;
     backface-visibility: hidden;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 0.8rem;
+    font-weight: 600;
     text-align: center;
+    background-color: $silver;
+}
+
+.front,
+.back {
+    background-color: $ghost;
 }
 
 .front {
-    background-color: #f0f0f0;
     transform: rotateY(0deg) translateZ($cube/2);
 }
 
 .back {
-    background-color: #f0f0f0;
     transform: rotateY(180deg) translateZ($cube/2);
 }
 
 .left {
-    background-color: #ccc;
     transform: rotateY(-90deg) translateZ($cube/2);
 }
 
 .right {
-    background-color: #ccc;
     transform: rotateY(90deg) translateZ($cube/2);
 }
 
 .top {
-    background-color: #ccc;
     transform: rotateX(90deg) translateZ($cube/2);
 }
 
 .bottom {
-    background-color: #ccc;
     transform: rotateX(-90deg) translateZ($cube/2);
 }
 
 .active {
-    border: 2px solid #1cab9d69;
     transform: rotateY(180deg);
+
+    .back {
+        background-color: rgba($ghost, 70%);
+    }
 }
 
-@media (max-width: 880px) {
+@media (max-width: $laptop) {
     .navbar {
         width: 100%;
         height: auto;
         display: flex;
         flex-direction: row;
+        transform: translateX(-50%);
         top: 0;
+        left: 50%;
 
         .cube:hover {
             transform: rotateX(-180deg);
@@ -91,7 +99,6 @@ $cube: 60px;
         }
 
         .back {
-            background-color: #f0f0f0;
             transform: rotateX(-180deg) translateZ($cube/2);
         }
     }

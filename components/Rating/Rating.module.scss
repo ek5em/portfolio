@@ -1,3 +1,5 @@
+@import "../../styles/root.scss";
+
 .rating {
     display: none;
     gap: 0.5rem;
@@ -11,10 +13,11 @@
     opacity: 0;
     transform: scale(0.5);
     animation: appear 0.5s forwards;
-    
+
     &.filled {
-        fill: gold;
-        animation: appear 0.5s forwards, fillAnimation 3s infinite;
+        transition: all 1s;
+        fill: $gold;
+        animation: appear 0.5s forwards, fillAnimation 4s infinite;
     }
 }
 
@@ -27,10 +30,12 @@
 
 @keyframes fillAnimation {
     0%,
-    100% {
-        fill: gold;
+    100%,
+    25%,
+    75% {
+        fill: $gold;
     }
     50% {
-        fill: orange;
+        fill: rgba($gold, 60%);
     }
 }

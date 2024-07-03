@@ -8,7 +8,6 @@ import StarIcon from "./svg/star.svg";
 import HomeIcon from "./svg/home.svg";
 import SkillsIcon from "./svg/skills.svg";
 import CodeFileIcon from "./svg/code-file.svg";
-import MessageIcon from "./svg/message.svg";
 import GitHubIcon from "./svg/github.svg";
 import LinkIcon from "./svg/link.svg";
 import TelegramIcon from "./svg/telegram.svg";
@@ -24,7 +23,6 @@ export {
     StarIcon,
     CodeFileIcon,
     HomeIcon,
-    MessageIcon,
     SkillsIcon,
     GitHubIcon,
     LinkIcon,

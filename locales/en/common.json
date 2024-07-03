@@ -1,1 +1,13 @@
-{"about":"Hi, I'm Dmitry. A passionate Frontend React Developer from Izhevsk, who makes the Internet world more beautiful and understandable.","aboutCalculator":"An application with the ability to arrange 3D shapes and view various graphs. There is also an interesting calculator that counts not only numbers","aboutReduxTable":"Working with Redux and the API. To use it, you need to allow optional content in your browser settings for this page","aboutTopApp":"Top different courses to improve your professional skills","contact":"SayHi!","dev":"Developer","home":"Home","skills":"Skills","works":"Works"}
+{
+    "about": "Hi, I'm Dmitry. A passionate Frontend React Developer from Izhevsk, who tries to make the Internet world more beautiful and understandable",
+    "aboutBootstrap": "A simple SPA application written using the Bootstrap library and pure JS. Working with the Yandex Maps API",
+    "aboutCalculator": "An application with the ability to arrange 3D shapes and view various graphs. There is also an interesting calculator that counts not only numbers",
+    "aboutLesDvor": "A business card website for the Lesnoy Dvor Plus store, created using Wordpress",
+    "aboutPayment": "A website for paying for mobile services. A fake API call is being used",
+    "aboutReduxTable": "Working with Redux and the API. To use it, you need to allow optional content in your browser settings for this page",
+    "aboutTopApp": "Top different courses to improve your professional skills",
+    "dev": "Developer",
+    "home": "Home",
+    "skills": "Skills",
+    "works": "Works"
+}

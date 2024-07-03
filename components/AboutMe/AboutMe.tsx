@@ -11,7 +11,7 @@ export default function AboutMe() {
         <div className={styles.wrap}>
             <div className={styles.about}>
                 <h1>
-                    Font-End React <br />
+                    Frontend React <br />
                     {t("dev")} 🖐
                 </h1>
                 <p>{t("about")}</p>

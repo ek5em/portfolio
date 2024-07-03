@@ -3,7 +3,7 @@
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import styles from "./Navbar.module.scss";
-import { CodeFileIcon, HomeIcon, MessageIcon, SkillsIcon } from "@/assets";
+import { CodeFileIcon, HomeIcon, SkillsIcon } from "@/assets";
 
 interface NavbarProps {
     activeSection: number;
@@ -14,7 +14,6 @@ const icons = [
     <HomeIcon key={0} />,
     <SkillsIcon key={1} />,
     <CodeFileIcon key={2} />,
-    <MessageIcon key={3} />,
 ];
 
 export default function Navigation({
@@ -24,7 +23,7 @@ export default function Navigation({
     const { t } = useTranslation();
     return (
         <div className={styles.navbar}>
-            {["home", "skills", "works", "contact"].map((label, i) => (
+            {["home", "skills", "works"].map((label, i) => (
                 <div
                     className={cn(styles.cube, {
                         [styles.active]: i === activeSection,
@@ -32,16 +31,16 @@ export default function Navigation({
                     key={label}
                     onClick={() => setActiveSection(i)}
                 >
-                    <div className={cn(styles.face, styles.front)}>
+                    <div className={cn(styles.side, styles.front)}>
                         {icons[i]}
                     </div>
-                    <div className={cn(styles.face, styles.back)}>
+                    <div className={cn(styles.side, styles.back)}>
                         <span>{t(label)}</span>
                     </div>
-                    <div className={cn(styles.face, styles.left)}></div>
-                    <div className={cn(styles.face, styles.right)}></div>
-                    <div className={cn(styles.face, styles.top)}></div>
-                    <div className={cn(styles.face, styles.bottom)}></div>
+                    <div className={cn(styles.side, styles.left)}></div>
+                    <div className={cn(styles.side, styles.right)}></div>
+                    <div className={cn(styles.side, styles.top)}></div>
+                    <div className={cn(styles.side, styles.bottom)}></div>
                 </div>
             ))}
         </div>

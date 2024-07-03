@@ -51,40 +51,6 @@ export default function SkillsCube() {
             onMouseLeave={handleMouseLeave}
         >
             <div
-                className={cn(styles.content, styles.rotating_cube, {
-                    [styles.opened]: isHovered,
-                })}
-                style={{
-                    transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`,
-                }}
-            >
-                <div className={cn(styles.side, styles.back)}>
-                    <NextIcon />
-                    <Rating rate={4} isOpen={isHovered} />
-                </div>
-                <div className={cn(styles.side, styles.front)}>
-                    <ReduxIcon />
-                    <Rating rate={4} isOpen={isHovered} />
-                </div>
-                <div className={cn(styles.side, styles.left)}>
-                    <JestIcon />
-                    <Rating rate={5} isOpen={isHovered} />
-                </div>
-                <div className={cn(styles.side, styles.right)}>
-                    <TSIcon />
-                    <Rating rate={5} isOpen={isHovered} />
-                </div>
-
-                <div className={cn(styles.side, styles.top)}>
-                    <ReactIcon />
-                    <Rating rate={5} isOpen={isHovered} />
-                </div>
-                <div className={cn(styles.side, styles.bottom)}>
-                    <SassIcon />
-                    <Rating rate={5} isOpen={isHovered} />
-                </div>
-            </div>
-            <div
                 className={cn(styles.rotating_cube)}
                 style={{
                     transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`,
@@ -96,6 +62,46 @@ export default function SkillsCube() {
                 <div className={cn(styles.side, styles.right)} />
                 <div className={cn(styles.side, styles.top)} />
                 <div className={cn(styles.side, styles.bottom)} />
+            </div>
+            <div
+                className={cn(styles.content, styles.rotating_cube, {
+                    [styles.opened]: isHovered,
+                })}
+                style={{
+                    transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`,
+                }}
+            >
+                <div className={cn(styles.side, styles.back)}>
+                    <NextIcon />
+                    <p>Next.js</p>
+                    <Rating rate={4} isOpen={isHovered} />
+                </div>
+                <div className={cn(styles.side, styles.front)}>
+                    <ReduxIcon />
+                    <p>Redux</p>
+                    <Rating rate={4} isOpen={isHovered} />
+                </div>
+                <div className={cn(styles.side, styles.left)}>
+                    <JestIcon />
+                    <p>Jest</p>
+                    <Rating rate={5} isOpen={isHovered} />
+                </div>
+                <div className={cn(styles.side, styles.right)}>
+                    <TSIcon />
+                    <p>TypeScript</p>
+                    <Rating rate={5} isOpen={isHovered} />
+                </div>
+
+                <div className={cn(styles.side, styles.top)}>
+                    <ReactIcon />
+                    <p>React</p>
+                    <Rating rate={5} isOpen={isHovered} />
+                </div>
+                <div className={cn(styles.side, styles.bottom)}>
+                    <SassIcon />
+                    <p>Sass</p>
+                    <Rating rate={5} isOpen={isHovered} />
+                </div>
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import cn from "classnames";
 import styles from "./page.module.scss";
 import {
@@ -15,19 +15,17 @@ enum EPage {
     home = 0,
     skills = 1,
     works = 2,
-    sayHi = 3,
 }
+
+const scrollPerSection = 0.5;
 
 export default function Content() {
     const [activeSection, setActiveSection] = useState<EPage>(EPage.home);
     const [animateCard, setAnimateCard] = useState(false);
-    const scrollRef = useRef(false);
 
     const handleScroll = () => {
-        if (scrollRef.current) return;
-
         const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
+        const windowHeight = window.innerHeight * scrollPerSection;
 
         if (scrollPosition < windowHeight) {
             setActiveSection(EPage.home);
@@ -35,8 +33,6 @@ export default function Content() {
             setActiveSection(EPage.skills);
         } else if (scrollPosition < 3 * windowHeight) {
             setActiveSection(EPage.works);
-        } else {
-            setActiveSection(EPage.sayHi);
         }
     };
 
@@ -48,8 +44,7 @@ export default function Content() {
     }, []);
 
     useEffect(() => {
-        const windowHeight = window.innerHeight;
-        scrollRef.current = true;
+        const windowHeight = window.innerHeight * scrollPerSection;
 
         switch (activeSection) {
             case EPage.home: {
@@ -57,27 +52,15 @@ export default function Content() {
                 break;
             }
             case EPage.skills: {
-                window.scrollTo({ top: windowHeight });
+                window.scrollTo({ top: windowHeight + 100 });
                 break;
             }
             case EPage.works: {
-                window.scrollTo({ top: windowHeight * 2 });
+                window.scrollTo({ top: windowHeight * 2 + 100 });
                 setAnimateCard(true);
                 break;
             }
-            case EPage.sayHi: {
-                window.scrollTo({
-                    top: windowHeight * 3,
-                });
-                break;
-            }
         }
-
-        localStorage.setItem("activeSection", activeSection.toString());
-
-        setTimeout(() => {
-            scrollRef.current = false;
-        }, 250);
     }, [activeSection]);
 
     return (
@@ -107,13 +90,6 @@ export default function Content() {
                     })}
                 >
                     {animateCard && <CardDealer />}
-                </section>
-                <section
-                    className={cn(styles.sayhi, {
-                        [styles.active]: activeSection === EPage.sayHi,
-                    })}
-                >
-                    FORM
                 </section>
             </div>
             <div className={styles.language}>
