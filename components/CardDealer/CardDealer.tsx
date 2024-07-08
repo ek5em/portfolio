@@ -23,9 +23,9 @@ const CardDealer = () => {
     }, []);
 
     const calculateTransform = useCallback((i: number) => {
-        if (window.innerWidth > 880) {
+        if (windowWidth > 880) {
             const cardPerRow = Math.min(
-                Math.floor(window.innerWidth / cardWidth),
+                Math.floor(windowWidth / cardWidth),
                 3
             );
 
@@ -39,7 +39,11 @@ const CardDealer = () => {
             return `translateX(${x}%) translateY(${y}%)`;
         }
         return `translateX(0) translateY(0)`;
-    }, []);
+    }, [windowWidth]);
+
+    if (typeof window === "undefined") {
+        return null;
+    }
 
     return (
         <div className={styles.wrap}>
