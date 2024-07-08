@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Projects } from "./Projects";
 import { withLayout } from "@/Layout/Layout";
 import Card from "../Card/Card";
@@ -9,6 +9,19 @@ import styles from "./CardDealer.module.scss";
 const cardWidth = 432;
 
 const CardDealer = () => {
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setWindowWidth(window.innerWidth);
+
+            const handleResize = () => setWindowWidth(window.innerWidth);
+            window.addEventListener("resize", handleResize);
+
+            return () => window.removeEventListener("resize", handleResize);
+        }
+    }, []);
+
     const calculateTransform = useCallback((i: number) => {
         if (window.innerWidth > 880) {
             const cardPerRow = Math.min(
