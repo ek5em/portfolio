@@ -5,6 +5,7 @@ import Calculator from "@/assets/jpg/calculator.jpg";
 import Bootstrap from "@/assets/jpg/bootstrap.jpg";
 import LesDvor from "@/assets/jpg/lesdvor.jpg";
 import Payment from "@/assets/jpg/payment.jpg";
+import Taxi from "@/assets/jpg/taxi.jpg";
 
 export type TProject = {
     title: string;
@@ -24,7 +25,14 @@ export const Projects: TProject[] = [
         title: "Top Courses",
         stack: ["Next", "React", "Frame-motion"],
     },
-
+    {
+        aboutKeY: "aboutTaxi",
+        demo: "https://taxiorder.vercel.app",
+        gitHub: "https://github.com/ek5em/taxiorder",
+        image: Taxi,
+        title: "TaxiOrder",
+        stack: ["Redux", "React", "YMaps"],
+    },
     {
         aboutKeY: "aboutReduxTable",
         demo: "https://redux-table-one.vercel.app",
@@ -38,6 +46,7 @@ export const Projects: TProject[] = [
         demo: "https://bd-payment-app.vercel.app/",
         image: Payment,
         title: "PaymentApp",
+        gitHub: "https://github.com/ek5em/brave-developers-test",
         stack: ["Next", "React", "Styled-components"],
     },
     {

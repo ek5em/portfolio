@@ -14,6 +14,7 @@ export default async function initTranslations(
     i18nInstance.use(initReactI18next);
 
     if (!resources) {
+        
         i18nInstance.use(
             resourcesToBackend((language, namespace) =>
                 import(`@/locales/${language}/${namespace}.json`)

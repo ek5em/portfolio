@@ -10,13 +10,14 @@ import {
     SassIcon,
     TSIcon,
 } from "@/assets";
+import { withLayout } from "@/Layout/Layout";
+import Rating from "../Rating/Rating";
 
 import styles from "./SkillsCube.module.scss";
-import Rating from "../Rating/Rating";
 
 const rotateSpeed = 0.6;
 
-export default function SkillsCube() {
+const SkillsCube = () => {
     const [rotateX, setRotateX] = useState(0);
     const [rotateY, setRotateY] = useState(0);
     const [rotateZ, setRotateZ] = useState(0);
@@ -105,4 +106,6 @@ export default function SkillsCube() {
             </div>
         </div>
     );
-}
+};
+
+export default withLayout(SkillsCube);

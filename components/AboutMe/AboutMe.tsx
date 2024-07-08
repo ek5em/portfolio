@@ -4,8 +4,9 @@ import { useTranslation } from "react-i18next";
 import { GitHubIcon, TelegramIcon } from "@/assets";
 
 import styles from "./AboutMe.module.scss";
+import { withLayout } from "@/Layout/Layout";
 
-export default function AboutMe() {
+const AboutMe = () => {
     const { t } = useTranslation();
     return (
         <div className={styles.wrap}>
@@ -26,4 +27,6 @@ export default function AboutMe() {
             </div>
         </div>
     );
-}
+};
+
+export default withLayout(AboutMe);

@@ -1,6 +1,5 @@
-import { TranslationsProvider, AboutMe } from "@/components";
-import initTranslations from "../i18n";
-import {} from "@/components";
+import initTranslations from "../../i18n";
+import { SkillsCube, TranslationsProvider } from "@/components";
 
 const i18nNamespaces = ["common"];
 
@@ -17,7 +16,7 @@ export default async function Home({
             locale={locale}
             resources={resources}
         >
-            <AboutMe />
+            <SkillsCube />
         </TranslationsProvider>
     );
 }
