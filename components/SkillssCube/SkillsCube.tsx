@@ -75,12 +75,12 @@ const SkillsCube = () => {
                 <div className={cn(styles.side, styles.back)}>
                     <NextIcon />
                     <p>Next.js</p>
-                    <Rating rate={4} isOpen={isHovered} />
+                    <Rating rate={5} isOpen={isHovered} />
                 </div>
                 <div className={cn(styles.side, styles.front)}>
                     <ReduxIcon />
                     <p>Redux</p>
-                    <Rating rate={4} isOpen={isHovered} />
+                    <Rating rate={5} isOpen={isHovered} />
                 </div>
                 <div className={cn(styles.side, styles.left)}>
                     <JestIcon />
